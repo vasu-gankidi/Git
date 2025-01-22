@@ -31,11 +31,27 @@ git init - It converts a folder into working directory. I.e. add a .git director
 and adds additional info inside the directory for tracking.
 initializes a empty git repository.
 
-git commit -am "message" 
+git commit -am "message" -> creates a commit object. commit object points to 
+changes or files in case of new files commited. and new hash is generated for
+this commit based on the previous version and the changes in .git directory.
 
 Tracked file vs UnTracked file - We can use the .gitignore to specify the 
 files in the local working directory to be tracked by git.
+Untracked files - The files that are not added to the git staging area never before.
+Tracked files - The files that are added to staging/.git directory. 
+     - Un modified - Once the files are in the .git directory they are marked unmodified.
+     - If you edit file after commiting then those files marked modified, then needed to
+     be added to staging and commited to .git directory. I.e. if there any changes in files
+     between working, staging and .git directory they are termed as modified files.
 
-Untracked files - The files that are not added to the git staging area.
+git add . --dry-run -> List the files that move to the staging area/Index.
 
-git add . --dry-run -> List the files that move to the staging area.
+git add file_name -> copy the files from local to Index area (staging area).
+- If the file is already a tracked file, then the file in index is overrided with the latest 
+changes. This means the index keeps growing [i.e. files in the index keeps growing, there is
+no way to remove or make the index empty. Index is a file in side the .git directory]
+
+git commit -m "commit message" -> stores the state of the index in memory [].
+
+
+
