@@ -1,0 +1,41 @@
+Three states in GIT are Modified, Staged and commited.
+Working directory, Staging Area, .git directory -> 
+-----------------------------------------------
+If we make changes to the files in the working directory, we call the files are in modified state.
+If we move the files from working directory to Staging Area, we call the modified files are in  staging area (or) staged.
+When we commit the files, the files are moved from Staging area to .git directory (i.e. files are commited in .git). 
+Index or Staging area is tracked inside .git directory.
+
+
+git config --global user.name <user_name>
+git config --global user.email <email_address>
+
+(This command above can we rewritten i.e. changed to
+another user/email by issuing the same command)
+
+Git stores snapshots of your work (i.e. git staging area).
+But how does git know whose work it is storing? from the 
+global 'user.name' and 'user.email'.
+
+.git directory - Where the configuration files, git repository
+information, snapshots of the folder {in which git init is done}.
+
+git diff - Displays the changes that needs to be staged w.r.to. what is the git. once we
+stages the changes. git diff output is clean.
+git diff  (working dir vs staging dir)
+git diff --staged ( staging vs git)
+
+Add & Commit -
+----------------
+git init - It converts a folder into working directory. I.e. add a .git directory
+and adds additional info inside the directory for tracking.
+initializes a empty git repository.
+
+git commit -am "message" 
+
+Tracked file vs UnTracked file - We can use the .gitignore to specify the 
+files in the local working directory to be tracked by git.
+
+Untracked files - The files that are not added to the git staging area.
+
+git add . --dry-run -> List the files that move to the staging area.
