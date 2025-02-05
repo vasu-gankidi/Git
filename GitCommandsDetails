@@ -53,5 +53,34 @@ no way to remove or make the index empty. Index is a file in side the .git direc
 
 git commit -m "commit message" -> stores the state of the index in memory [].
 
+git remote -v # Verbose information. # 
 
+git config --global push.default simple # If we add this flag, only the changes in
+'master' local branch will be updated to the remote 'master' branch. i.e. if we have
+local branches other than master, the we need merge them on to master and push to
+remote (or) update this config parameter.
+
+credential.helper # to use user.email and user.name for git push
+
+git push <name> # push to the remote repository alias 'name'. By default,
+git will push the 'master' branch in local to 'master' branch in remote. Git
+will update the remote 'master' branch to look like your 'local' master branch.
+
+What will happen if we create a local branch and push it remote. How
+does git know where to push in the git repository? 
+ - git config --global push.default simple 
+ - create local branch, make changes and push changes to remote.
+ - We see below error - since GIT does not know where to push in remote.
+ fatal: The current branch PushConfigTest has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin PushConfigTest
+
+Difference between adding a collaborator vs forking the repository # Add details here TODO@vgankidi.
+
+Git supports various other protocols to communicate with the server, like SSH, 
+using SSH requires to set up your public and private SSH keys, and upload keys to GitHub.
+
+
+Git is distributed (why use GitHub or GitLab) - 
 
